@@ -1,5 +1,5 @@
-FROM ubuntu:16.04.3
-LABEL maintainer="Javier Santos"
+FROM ubuntu:16.04
+LABEL maintainer="Chris Gunawardena"
 
 ENV VERSION_SDK_TOOLS "3859397"
 
