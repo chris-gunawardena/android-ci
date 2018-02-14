@@ -20,6 +20,7 @@ RUN apt-get -qq update && \
       lib32ncurses5 \
       lib32z1 \
       unzip \
+      ruby-full \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN rm -f /etc/ssl/certs/java/cacerts; \
@@ -40,10 +41,6 @@ RUN mkdir -p /root/.android && \
 
 RUN while read -r package; do PACKAGES="${PACKAGES}${package} "; done < /sdk/packages.txt && \
     ${ANDROID_HOME}/tools/bin/sdkmanager ${PACKAGES}
-
-# RVM & Ruby
-RUN apt-get update
-RUN apt-get install ruby-full
 
 # Fast lane
 RUN gem install fastlane
