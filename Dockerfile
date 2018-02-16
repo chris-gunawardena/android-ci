@@ -21,6 +21,7 @@ RUN apt-get -qq update && \
       lib32z1 \
       unzip \
       ruby-full \
+      build-essential \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN rm -f /etc/ssl/certs/java/cacerts; \
@@ -43,5 +44,5 @@ RUN while read -r package; do PACKAGES="${PACKAGES}${package} "; done < /sdk/pac
     ${ANDROID_HOME}/tools/bin/sdkmanager ${PACKAGES}
 
 # Fast lane
-RUN gem install fastlane
+RUN gem install fastlane -NV
 
