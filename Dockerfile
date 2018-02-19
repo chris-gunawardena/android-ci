@@ -22,6 +22,7 @@ RUN apt-get -qq update && \
       unzip \
       ruby-full \
       build-essential \
+      wget \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN rm -f /etc/ssl/certs/java/cacerts; \
