@@ -46,4 +46,3 @@ RUN while read -r package; do PACKAGES="${PACKAGES}${package} "; done < /sdk/pac
 
 # Fast lane
 RUN gem install fastlane -NV
-
